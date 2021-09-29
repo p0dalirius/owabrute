@@ -13,8 +13,8 @@ apt install hydra
 ## Usage
 
 ```
-bash$ ./owabruter.sh -h
-Usage : ./owabruter.sh
+bash$ ./owabrute.sh -h
+Usage : ./owabrute.sh
       -d DOMAIN    : Target domain. Example : remote.targethost.co.uk
       -u USERSLIST : Path to wordlist of users to test
       -p PASSLIST  : Path to wordlist of passwords to test
@@ -25,13 +25,13 @@ Usage : ./owabruter.sh
 Usage example against a test domain `test.domain.net` with `./users.txt` and `./passwords.txt` wordlists :
 
 ```
-./owabruter.sh -d test.domain.net -u ./users.txt -p ./passwords.txt
+./owabrute.sh -d test.domain.net -u ./users.txt -p ./passwords.txt
 ```
 
 If the files cannot be accessed, you will have a message indicating `Could not access ressource` :
 
 ```
-bash$ ./owabruter.sh -d test.domain.net -u ./users.txt -p ./passwords.txt
+bash$ ./owabrute.sh -d test.domain.net -u ./users.txt -p ./passwords.txt
 
  ██████╗ ██╗    ██╗ █████╗     ██████╗ ██████╗ ██╗   ██╗████████╗███████╗
 ██╔═══██╗██║    ██║██╔══██╗    ██╔══██╗██╔══██╗██║   ██║╚══██╔══╝██╔════╝
