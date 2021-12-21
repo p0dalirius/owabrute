@@ -27,7 +27,7 @@ owabrute(){
             local PASSLIST="${3}"
 
             hydra -V            \
-                -L "${USERLIST}"  \
+                -L "${USERSLIST}"  \
                 -e s            \
                 -P "${PASSLIST}" \
                 "${DOMAIN}"       \
