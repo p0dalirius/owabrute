@@ -1,5 +1,4 @@
-# Outlook Web Application credentials bruteforcer
-
+![](./.github/banner.png)
 
 <p align="center">
   Hydra wrapper for bruteforcing Microsoft Outlook Web Application.
